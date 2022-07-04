@@ -1,43 +1,127 @@
-[
-    {
-        "id": 1,
-        "subject": {
-            "subjectName": "HTML",
-            "subjectDiscription": "Get Started with the Language of building web Pages"
-        },
-        "chapter": {
-            "chapter1": {
-                "name": "HTML Introduction",
-                "content": {
-                    "topic1": {
-                        "name": "What is HTML?",
-                        "content1": "HTML stands for Hyper Text Markup Language",
-                        "content2": "HTML is the standard markup language for creating Web pages",
-                        "content3": "HTML elements tell the browser how to display the content",
-                        "content4": "HTML consists of a series of elements"
-                    },
-                    "topic2": {
-                        "name": "A Simple HTML Document",
-                        "content1": "The <!DOCTYPE html> declaration defines that this document is an HTML5 document"
+{
+    "preMasterApi": [
+        {
+            "id": 1,
+            "subject": {
+                "subjectName": "HTML",
+                "subjectDiscription": "Get Started with the Language of building web Pages"
+            },
+            "chapter": {
+                "chapter1": {
+                    "name": "HTML Introduction",
+                    "content": {
+                        "topic1": {
+                            "name": "What is HTML?",
+                            "content1": "HTML stands for Hyper Text Markup Language",
+                            "content2": "HTML is the standard markup language for creating Web pages",
+                            "content3": "HTML elements tell the browser how to display the content",
+                            "content4": "HTML consists of a series of elements"
+                        },
+                        "topic2": {
+                            "name": "A Simple HTML Document",
+                            "content1": "The <!DOCTYPE html> declaration defines that this document is an HTML5 document"
+                        }
+                    }
+                },
+                "chapter2": {
+                    "name": "HTML Introduction",
+                    "content": {
+                        "topic1": {
+                            "name": "What is HTML?",
+                            "content1": "HTML stands for Hyper Text Markup Language",
+                            "content2": "HTML is the standard markup language for creating Web pages",
+                            "content3": "HTML elements tell the browser how to display the content",
+                            "content4": "HTML consists of a series of elements"
+                        },
+                        "topic2": {
+                            "name": "A Simple HTML Document",
+                            "content1": "The <!DOCTYPE html> declaration defines that this document is an HTML5 document"
+                        }
                     }
                 }
+            }
+        },
+        {
+            "id": 2,
+            "subject": {
+                "subjectName": "HTML",
+                "subjectDiscription": "Get Started with the Language of building web Pages"
             },
-            "chapter2": {
-                "name": "HTML Introduction",
-                "content": {
-                    "topic1": {
-                        "name": "What is HTML?",
-                        "content1": "HTML stands for Hyper Text Markup Language",
-                        "content2": "HTML is the standard markup language for creating Web pages",
-                        "content3": "HTML elements tell the browser how to display the content",
-                        "content4": "HTML consists of a series of elements"
-                    },
-                    "topic2": {
-                        "name": "A Simple HTML Document",
-                        "content1": "The <!DOCTYPE html> declaration defines that this document is an HTML5 document"
+            "chapter": {
+                "chapter1": {
+                    "name": "HTML Introduction",
+                    "content": {
+                        "topic1": {
+                            "name": "What is HTML?",
+                            "content1": "HTML stands for Hyper Text Markup Language",
+                            "content2": "HTML is the standard markup language for creating Web pages",
+                            "content3": "HTML elements tell the browser how to display the content",
+                            "content4": "HTML consists of a series of elements"
+                        },
+                        "topic2": {
+                            "name": "A Simple HTML Document",
+                            "content1": "The <!DOCTYPE html> declaration defines that this document is an HTML5 document"
+                        }
+                    }
+                },
+                "chapter2": {
+                    "name": "HTML Introduction",
+                    "content": {
+                        "topic1": {
+                            "name": "What is HTML?",
+                            "content1": "HTML stands for Hyper Text Markup Language",
+                            "content2": "HTML is the standard markup language for creating Web pages",
+                            "content3": "HTML elements tell the browser how to display the content",
+                            "content4": "HTML consists of a series of elements"
+                        },
+                        "topic2": {
+                            "name": "A Simple HTML Document",
+                            "content1": "The <!DOCTYPE html> declaration defines that this document is an HTML5 document"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 3,
+            "subject": {
+                "subjectName": "HTML",
+                "subjectDiscription": "Get Started with the Language of building web Pages"
+            },
+            "chapter": {
+                "chapter1": {
+                    "name": "HTML Introduction",
+                    "content": {
+                        "topic1": {
+                            "name": "What is HTML?",
+                            "content1": "HTML stands for Hyper Text Markup Language",
+                            "content2": "HTML is the standard markup language for creating Web pages",
+                            "content3": "HTML elements tell the browser how to display the content",
+                            "content4": "HTML consists of a series of elements"
+                        },
+                        "topic2": {
+                            "name": "A Simple HTML Document",
+                            "content1": "The <!DOCTYPE html> declaration defines that this document is an HTML5 document"
+                        }
+                    }
+                },
+                "chapter2": {
+                    "name": "HTML Introduction",
+                    "content": {
+                        "topic1": {
+                            "name": "What is HTML?",
+                            "content1": "HTML stands for Hyper Text Markup Language",
+                            "content2": "HTML is the standard markup language for creating Web pages",
+                            "content3": "HTML elements tell the browser how to display the content",
+                            "content4": "HTML consists of a series of elements"
+                        },
+                        "topic2": {
+                            "name": "A Simple HTML Document",
+                            "content1": "The <!DOCTYPE html> declaration defines that this document is an HTML5 document"
+                        }
                     }
                 }
             }
         }
-    }
-]
+    ]
+}

@@ -23,6 +23,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+// -----------------------CONNECTING MONGODB---------------------------------//
+
+
 const PORT = process.env.PORT || 80;
 
 mongoose.connect("mongodb+srv://Prince-Mathur:Prince8797@cluster0.wfwvm.mongodb.net/?retryWrites=true&w=majority").then(() => {
@@ -31,7 +35,11 @@ mongoose.connect("mongodb+srv://Prince-Mathur:Prince8797@cluster0.wfwvm.mongodb.
     console.log(error);
 });
 
-const proMasterUserSchema = new mongoose.Schema({
+
+// --------------------------------USER SCHEMA-------------------------------//
+
+
+const preMasterUserSchema = new mongoose.Schema({
     username: {
         type: String,
         require: true,
@@ -47,20 +55,85 @@ const proMasterUserSchema = new mongoose.Schema({
     }
 })
 
-proMasterUserSchema.plugin(passportLocalMongoose);
+preMasterUserSchema.plugin(passportLocalMongoose);
 
-const ProMasterUser = new mongoose.model("ProMasterUser", proMasterUserSchema);
+const PreMasterUser = new mongoose.model("PreMasterUser", preMasterUserSchema);
 
-passport.use(ProMasterUser.createStrategy());
+passport.use(PreMasterUser.createStrategy());
 
 // use static serialize and deserialize of model for passport session support
-passport.serializeUser(ProMasterUser.serializeUser());
-passport.deserializeUser(ProMasterUser.deserializeUser());
+passport.serializeUser(PreMasterUser.serializeUser());
+passport.deserializeUser(PreMasterUser.deserializeUser());
 
-app.get("/promaster/prince_mathur/api", (req, res) => {
-    ProMasterUser.find((err, foundData) => {
+
+
+// ----------------------------MAIN DATA API SCHEMA-----------------------------//
+
+const preMasterApiSchema = new mongoose.Schema({
+    id: {
+        type: Number
+    },
+    subject: {
+        subjectName: {
+            type: String
+        },
+        SubjectDiscription: {
+            type: String
+        }
+    },
+    chapter: {
+        chapterNo: {
+            name: {
+                type: String
+            },
+            content: {
+                topicNo: {
+                    name: {
+                        type: String,
+                    },
+                    contentNo: {
+                        type: String,
+                    }
+                }
+            }
+        }
+    }
+})
+
+const PreMasterApi = new mongoose.model("PreMasterApi", preMasterApiSchema);
+
+
+// ------------------------------GETTING USER API------------------------------//
+
+
+app.get("/premaster/prince_mathur/users/api", (req, res) => {
+    PreMasterUser.find((err, foundData) => {
         if (!err) {
-            res.send(foundData);
+            res.json(foundData);
+        } else {
+            res.send(err);
+        }
+    })
+})
+
+
+// ---------------------------GETTING MAIN DATA API-----------------------------//
+
+
+app.get("/premaster/prince_mathur/maindata/api", (req, res) => {
+    PreMasterApi.find((err, foundData) => {
+        if (!err) {
+            res.json(foundData);
+        } else {
+            res.send(err);
+        }
+    })
+})
+
+app.get("/premaster/prince_mathur/maindata/api/:id", (req, res) => {
+    PreMasterApi.findById(req.params.id, (err, foundData) => {
+        if (!err) {
+            res.json(foundData);
         } else {
             res.send(err);
         }
@@ -76,12 +149,16 @@ app.get("/promaster/prince_mathur/api", (req, res) => {
 //     });
 // });
 
-app.post("/promaster/prince_mathur/api", (req, res) => {
-    const newProMasterUser = new ProMasterUser({
+
+// ---------------------------SIGNUP POST FROM USER---------------------------//
+
+
+app.post("/premaster/prince_mathur/api", (req, res) => {
+    const newPreMasterUser = new PreMasterUser({
         username: req.body.username,
         email: req.body.email
     })
-    ProMasterUser.register(newProMasterUser, req.body.password, function (err, user) {
+    PreMasterUser.register(newPreMasterUser, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
             console.log("Something went wrong!!!!!!!!!");
@@ -96,8 +173,13 @@ app.post("/promaster/prince_mathur/api", (req, res) => {
     })
 })
 
-app.post("/promaster/prince_mathur/api/login", (req, res) => {
-    const amIUserOrNot = new ProMasterUser({
+
+// ---------------------------LOGIN POST FROM USER---------------------------//
+
+
+
+app.post("/premaster/prince_mathur/api/login", (req, res) => {
+    const amIUserOrNot = new PreMasterUser({
         username: "",
         email: req.body.email,
         password: req.body.password
@@ -116,6 +198,11 @@ app.post("/promaster/prince_mathur/api/login", (req, res) => {
     })
 })
 
+
+// ---------------------------LISTENING ON PORT 80 ---------------------------//
+
+
 app.listen(PORT, () => {
     console.log(`Listening at port ${PORT}`);
 })
+
