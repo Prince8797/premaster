@@ -36,6 +36,11 @@ mongoose.connect("mongodb+srv://Prince-Mathur:Prince8797@cluster0.wfwvm.mongodb.
 });
 
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('my-app/build'));
+}
+
+
 // --------------------------------USER SCHEMA-------------------------------//
 
 
