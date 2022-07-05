@@ -9,7 +9,7 @@
     "build": "cd my-app && npm run build",
     "install-client": "cd my-app && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "my-app": "npm start --prefix my-app",
     "dev": "concurrently -n 'server,my-app' -c 'red,blue' \"npm run server\" \"npm run my-app\"",
     "serve-json": "json-server --watch preMasterApi.json --port 80"
