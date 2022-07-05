@@ -1,0 +1,50 @@
+@media screen and (max-width:600px) {
+    div.footerLogo img {
+        height: 35px;
+        width: 70px;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: white;
+}
+
+.footerLogo img {
+    height: 50px;
+    width: 100px;
+}
+
+.footerLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.brandName {
+    font-size: 1em;
+}
+
+.sites {
+    display: flex;
+}
+
+.img {
+    padding: 10px;
+}
+
+.sites img {
+    height: 30px;
+    width: 30px;
+}
+
+.foot {
+    margin: 10px 0;
+}
