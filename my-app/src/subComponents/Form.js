@@ -3,11 +3,14 @@ import axios from "axios";
 import './Form.css';
 import {
     Link,
+    useNavigate
 } from "react-router-dom";
 export default function Form(props) {
 
+    const navigate = useNavigate();
+
     const [user, setUser] = useState({
-        username: "", email: "", password: ""
+        fname: "", username: "", password: ""
     });
 
     const handleChange = async (event) => {
@@ -21,8 +24,8 @@ export default function Form(props) {
         event.preventDefault();
 
         const payload = {
+            fname: user.fname,
             username: user.username,
-            email: user.email,
             password: user.password
         }
 
@@ -34,14 +37,51 @@ export default function Form(props) {
             .then(() => {
                 console.log("Data has been sent to the server");
             })
+        axios.get("/registered")
+            .then(response => {
+                console.log(response.data);
+                if (response.data === true)
+                    navigate(`/${user.username}`);
+            })
+            .catch(error => {
+                console.log(error);
+            })
         setUser({
-            username: "", email: "", password: ""
+            fname: "", username: "", password: ""
         });
     }
 
+    const handleLoginSubmit = async (event) => {
+        event.preventDefault();
+
+        const loginData = {
+            username: user.username,
+            password: user.password
+        }
+
+        axios({
+            url: "/premaster/prince_mathur/login",
+            withCredentials: true,
+            method: "POST",
+            data: loginData
+        })
+            .then((response) => {
+                console.log(response.data);
+                if (response.data === true)
+                    navigate(`/${user.username}`, { sendEmail: user.username });
+                if (response.data === false)
+                    navigate('/SignUp');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        setUser({
+            username: "", password: ""
+        });
+    }
 
     return (
-        <form onSubmit={handleSignUpSubmit}>
+        <form onSubmit={props.callback ? handleLoginSubmit : handleSignUpSubmit}>
             <div className="form-container">
                 <div className="register-form">
                     <div className="form-logo">
@@ -55,19 +95,19 @@ export default function Form(props) {
                         <div className="option-font">OR {props.callback ? "Login" : "SignUp"} with Email</div>
                         <div><hr /></div>
                     </div>
-                    {!props.callback && <div className="user"><label htmlFor="username">Username</label>
+                    {!props.callback && <div className="user"><label htmlFor="name">Username</label>
                         <input className="input"
                             type="text"
-                            name="username"
-                            value={user.username}
+                            name="fname"
+                            value={user.fname}
                             onChange={handleChange}
                         /></div>}
                     <div className="user">
                         <label htmlFor="email">Email Address</label>
                         <input className="input"
                             type="email"
-                            name="email"
-                            value={user.email}
+                            name="username"
+                            value={user.username}
                             onChange={handleChange}
                         />
                     </div>

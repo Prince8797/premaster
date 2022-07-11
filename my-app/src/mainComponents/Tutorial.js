@@ -13,7 +13,6 @@ const Tutorial = () => {
         axios.get(`/premaster/prince_mathur/maindata/api/${id}`)
             .then(response => {
                 setTutorial(response.data);
-                console.log(response.data);
             })
             .catch(error => {
                 console.log(error);
@@ -21,16 +20,7 @@ const Tutorial = () => {
     }, [id]);
 
     const displayTutorial = () => {
-        return Object.keys(tutorial).map(({ name, content: { topicNo: { topic } } }) => {
-            return (
-                <div className="">
-                    <div key={id} className="">
-                        <div className="">{name}</div>
-                        <div className="">{topic}</div>
-                    </div>
-                </div>
-            )
-        })
+
     }
 
     return (

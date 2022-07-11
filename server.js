@@ -14,12 +14,17 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+    next();
+});
 
 app.use(session({
     secret: "this is my little secret",
-    resave: false,
-    saveUninitialized: false
-}))
+    resave: true,
+    saveUninitialized: true
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -45,11 +50,11 @@ if (process.env.NODE_ENV === 'production') {
 
 
 const preMasterUserSchema = new mongoose.Schema({
-    username: {
+    fname: {
         type: String,
-        require: true,
+        require: true
     },
-    email: {
+    username: {
         type: String,
         require: true,
         unique: true
@@ -71,36 +76,17 @@ passport.serializeUser(PreMasterUser.serializeUser());
 passport.deserializeUser(PreMasterUser.deserializeUser());
 
 
-
 // ----------------------------MAIN DATA API SCHEMA-----------------------------//
 
 const preMasterApiSchema = new mongoose.Schema({
-    id: {
-        type: Number
-    },
-    subject: {
-        subjectName: {
-            type: String
-        },
-        SubjectDiscription: {
-            type: String
-        }
-    },
-    chapter: {
-        chapterNo: {
-            name: {
-                type: String
-            },
-            content: {
-                topicNo: {
-                    name: {
-                        type: String,
-                    },
-                    contentNo: {
-                        type: String,
-                    }
-                }
-            }
+    id: Number,
+    subjectName: String,
+    subjectDiscription: String,
+    chapterNo: {
+        chapterName: String,
+        TopicNo: {
+            name: String,
+            Content: String
         }
     }
 })
@@ -121,6 +107,15 @@ app.get("/premaster/prince_mathur/users/api", (req, res) => {
     })
 })
 
+app.get("/user/:findUser", (req, res) => {
+    PreMasterUser.findOne({ username: req.params.findUser }, (err, foundData) => {
+        if (!err) {
+            res.json(foundData);
+        } else {
+            res.send(err);
+        }
+    })
+})
 
 // ---------------------------GETTING MAIN DATA API-----------------------------//
 
@@ -145,6 +140,16 @@ app.get("/premaster/prince_mathur/maindata/api/:id", (req, res) => {
     })
 })
 
+
+app.get("/presentOrNot", (req, res) => {
+    if (req.isAuthenticated()) {
+        res.send(true);
+    }
+    else {
+        res.send(false);
+    }
+})
+
 // app.get("/secret")
 
 // app.get('/logout', function (req, res, next) {
@@ -160,19 +165,19 @@ app.get("/premaster/prince_mathur/maindata/api/:id", (req, res) => {
 
 app.post("/premaster/prince_mathur/api", (req, res) => {
     const newPreMasterUser = new PreMasterUser({
-        username: req.body.username,
-        email: req.body.email
+        fname: req.body.fname,
+        username: req.body.username
     })
     PreMasterUser.register(newPreMasterUser, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
             console.log("Something went wrong!!!!!!!!!");
-            // res.redirect("/signup");
+            res.redirect('/presentOrNot');
         }
         else {
             passport.authenticate("local")(req, res, function () {
-                // res.redirect("/secret");
                 console.log("Your Account has been Created !!!!!!")
+                res.redirect('/presentOrNot');
             })
         }
     })
@@ -182,22 +187,20 @@ app.post("/premaster/prince_mathur/api", (req, res) => {
 // ---------------------------LOGIN POST FROM USER---------------------------//
 
 
-
-app.post("/premaster/prince_mathur/api/login", (req, res) => {
+app.post("/premaster/prince_mathur/login", (req, res) => {
     const amIUserOrNot = new PreMasterUser({
-        username: "",
-        email: req.body.email,
+        username: req.body.username,
         password: req.body.password
     });
     req.login(amIUserOrNot, function (err) {
         if (err) {
             console.log(err);
-            // res.redirect("/signup");
+            res.redirect('/presentOrNot');
         }
         else {
             passport.authenticate("local")(req, res, function () {
-                // res.redirect("/secret");
-                console.log("You are Loged in")
+                console.log("You are Loged in");
+                res.redirect('/presentOrNot');
             })
         }
     })

@@ -26,9 +26,9 @@ export default function HomeCard() {
                 <div className="card">
                     <div key={items._id} className="card-box">
                         <div className="img card-child"><img src={items.bgURL} alt="error" /></div>
-                        <div className="card-title card-child">{items.subject.subjectName}</div>
-                        <div className="card-content card-child">{items.subject.subjectDiscription}</div>
-                        <Link to={`/${items._id}`}><button className="card-btn card-child">Learn {items.subject.subjectName}</button>
+                        <div className="card-title card-child">{items.subjectName}</div>
+                        <div className="card-content card-child">{items.subjectDiscription}</div>
+                        <Link to={`/${items._id}`}><button className="card-btn card-child">Learn {items.subjectName}</button>
                         </Link>
                     </div>
                 </div>

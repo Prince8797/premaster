@@ -6,6 +6,7 @@ import Blog from './Blog';
 import LogIn from './LogIn';
 import SignUp from './SignUp';
 import Tutorial from './Tutorial';
+import Secret from './Secret';
 import {
     BrowserRouter as Router,
     Route,
@@ -54,6 +55,7 @@ export default function Header() {
                 <Route path='/SignUp' element={<SignUp />} />
                 <Route path='/LogIn' element={<LogIn />} />
                 <Route path='/:id' element={<Tutorial />} />
+                <Route path='/:username' element={<Secret />} />
             </Routes>
         </Router>
     )

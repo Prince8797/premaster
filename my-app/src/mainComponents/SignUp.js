@@ -1,5 +1,4 @@
 import Form from "../subComponents/Form";
-import "./SignUp.css"
 export default function SignUp() {
     return (
         <div className="signup">
