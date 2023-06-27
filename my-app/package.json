@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://Prince8797.github.io/premaster",
   "proxy": "http://localhost:80",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
