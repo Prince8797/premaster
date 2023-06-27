@@ -108,11 +108,12 @@ app.get("/premaster/prince_mathur/users/api", (req, res) => {
 })
 
 app.get("/user/:findUser", (req, res) => {
-    PreMasterUser.findOne({ username: req.params.findUser }, (err, foundData) => {
-        if (!err) {
-            res.json(foundData);
-        } else {
-            res.send(err);
+    PreMasterUser.find({ username: req.params.username }, (err, foundData) => {
+        if (req.isAuthenticated()) {
+            res.send(foundData);
+        }
+        else {
+            res.send(false);
         }
     })
 })
@@ -141,14 +142,7 @@ app.get("/premaster/prince_mathur/maindata/api/:id", (req, res) => {
 })
 
 
-app.get("/presentOrNot", (req, res) => {
-    if (req.isAuthenticated()) {
-        res.send(true);
-    }
-    else {
-        res.send(false);
-    }
-})
+
 
 // app.get("/secret")
 
@@ -177,7 +171,7 @@ app.post("/premaster/prince_mathur/api", (req, res) => {
         else {
             passport.authenticate("local")(req, res, function () {
                 console.log("Your Account has been Created !!!!!!")
-                res.redirect('/presentOrNot');
+                res.redirect("/user/:findUser");
             })
         }
     })
@@ -195,12 +189,11 @@ app.post("/premaster/prince_mathur/login", (req, res) => {
     req.login(amIUserOrNot, function (err) {
         if (err) {
             console.log(err);
-            res.redirect('/presentOrNot');
         }
         else {
             passport.authenticate("local")(req, res, function () {
                 console.log("You are Loged in");
-                res.redirect('/presentOrNot');
+                res.redirect("/user/:findUser");
             })
         }
     })

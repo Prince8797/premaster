@@ -9,7 +9,7 @@ export default function Home() {
             <div className="home-first">
                 <div className="home-first-content">
                     <div className="content-title"><p>Welcome to PreMaster !!</p></div>
-                    <div className="content-discription"><p>Are You confuse Where to begin? Let's begin your journey to become a Fullstack Web Developer with PreMaster. Here You will get whatever you need to conqueror your goal of becoming real time full stact Web Developer. </p></div>
+                    <div className="content-discription"><p>Are You confuse with how to begin and where to begin?<br /> Begin your journey to become a Fullstack Web Developer with PreMaster. Here You will get whatever you need to conqueror your goal of becoming real time full stact Web Developer. </p></div>
                     <hr />
                     <div className="home-register">
                         <Link to="/SignUp"><button>SignUp</button></Link>

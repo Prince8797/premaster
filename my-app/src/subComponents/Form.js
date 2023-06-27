@@ -67,13 +67,12 @@ export default function Form(props) {
         })
             .then((response) => {
                 console.log(response.data);
-                if (response.data === true)
-                    navigate(`/${user.username}`, { sendEmail: user.username });
-                if (response.data === false)
-                    navigate('/SignUp');
+                if (response.data !== false)
+                    navigate(`/user/${user.username}`, { state: { username: user.username } });
             })
             .catch(error => {
                 console.log(error);
+                navigate('/SignUp');
             })
         setUser({
             username: "", password: ""

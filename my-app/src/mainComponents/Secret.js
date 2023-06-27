@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useLocation } from 'react-router-dom';
 export default function Secret() {
-    const [logedUser, setLogedUser] = useState({});
+
     const location = useLocation();
-    const findUser = location.state.sendEmail;
+    const username = location.state.username;
+    console.log(username);
+
+    const [regUser, setRegUser] = useState([]);
+
     useEffect(() => {
-        axios.get(`/user/${findUser}`)
+        axios.get(`/user/${username}`)
             .then(response => {
-                setLogedUser(response.data);
+                setRegUser(response.data);
                 console.log(response.data);
             })
             .catch(error => {
                 console.log(error);
             })
-    }, [findUser]);
-    const displayLogedUser = () => {
+    }, [username]);
 
-    }
     return (
         <div className="secret">
-            <div className='tutorial'>
-                {displayLogedUser()}
+            <div className='secret'>
+
             </div>
         </div>
     )

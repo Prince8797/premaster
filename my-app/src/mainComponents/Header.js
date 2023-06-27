@@ -55,7 +55,7 @@ export default function Header() {
                 <Route path='/SignUp' element={<SignUp />} />
                 <Route path='/LogIn' element={<LogIn />} />
                 <Route path='/:id' element={<Tutorial />} />
-                <Route path='/:username' element={<Secret />} />
+                <Route path='/user/:username' element={<Secret />} />
             </Routes>
         </Router>
     )
