@@ -2,6 +2,7 @@
   "name": "reactweb",
   "version": "1.0.0",
   "description": "",
+  "homepage": "http://Prince8797.github.io/premaster",
   "main": "server.js",
   "scripts": {
     "predeploy": "npm run build",
