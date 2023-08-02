@@ -1,0 +1,21 @@
+.tutorialContainer {
+    display: flex;
+    flex-direction: column;
+    background: -webkit-linear-gradient(150deg, red, yellow);
+    align-items: center;
+}
+
+.tutorial {
+    /* height: 54vh; */
+    padding: 10vh 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.component {
+    padding: 10px 10px;
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: rgb(51, 26, 8);
+}
