@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 // import logger from 'use-reducer-logger'
-import './HomeCard.css';
+// import './HomeCard.css';
 
 function reducer(state, action) {
     switch (action.type) {
@@ -49,11 +49,12 @@ export default function HomeCard() {
                         studyMaterials.map((items) => (
                             <div className="card" key={items.id}>
                                 <div className="card-box">
-                                    <div className="img card-child"><img src={items.bgURL} alt="error" /></div>
-                                    <div className="card-title card-child">{items.subjectName}</div>
-                                    <div className="card-content card-child">{items.subjectDiscription}</div>
-                                    <Link to={`/${items.subjectName}`}><button className="card-btn card-child">Learn {items.subjectName}</button>
-                                    </Link>
+                                    <div className="card-image"><img src={items.bgURL} alt="error" /></div>
+                                    <div className="card-text">{items.subjectName}</div>
+                                    <div className="card-text">{items.subjectDiscription}</div>
+                                    <div className="card-button">
+                                        <Link to={`/${items.subjectName}`}><p>Learn {items.subjectName}</p></Link>
+                                    </div>
                                 </div>
                             </div>
                         ))

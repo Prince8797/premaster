@@ -1,19 +1,6 @@
-div.blogContainer {
-    position: absolute;
-    padding-top: 8vh;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    background-color: white;
-    padding: 60px;
-    margin: 210px 0 0 200px;
-}
-
 @media screen and (max-width:600px) {
     div.blog-first {
-        background-image: url(../../../public/images/blog2.png);
+        /* background-image: url(../../../public/images/register.png); */
         background-size: contain;
         background-repeat: no-repeat;
         position: relative;
@@ -25,12 +12,60 @@ div.blogContainer {
 
 @media screen and (min-width:601px) {
     div.blog-first {
-        background-image: url(../../../public/images/blog1.png);
+        background-image: url(../../../public/images/register.png);
         background-size: contain;
         background-repeat: no-repeat;
         position: relative;
         width: 100%;
         height: 0;
         padding-top: 56.3%;
+    }
+
+    div.blogContainer {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding-top: 8vh;
+        top: 0;
+        left: 0;
+        background-color: #d7d4d4;
+        width: 30vw;
+        margin: 90px 33vw;
+        padding: 30px;
+        border-radius: 5px;
+    }
+
+    .common {
+        margin: 5px 0 0 0;
+        padding: 15px 0;
+        border: none;
+        width: 100%;
+    }
+
+    .text {
+        padding: 12px 10px;
+        width: 100%;
+        text-decoration: none;
+        border-radius: 3px;
+        border: none;
+        font-size: 16px;
+    }
+
+    div.blogContainer p,
+    .claim {
+        padding: 10px 0;
+        text-align: center;
+        font-size: 1.4em;
+        font-weight: 600;
+    }
+
+    .post-button {
+        margin: 20px 0 0 0;
+        padding: 10px 0;
+        border: none;
+        width: 100%;
+        background-color: #fff;
+        font-size: 18px;
+        cursor: pointer;
     }
 }

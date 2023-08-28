@@ -27,13 +27,15 @@ export default function Header() {
                         <Link to='/' className='link'>Home</Link>
                     </div>
                     <div className="nav">
-                        <Link to='/Contact' className='link'>Contact</Link>
-                    </div>
-                    <div className="nav">
                         <Link to='/About' className='link'>About</Link>
                     </div>
+                    {/* Now Blog in website is Contact.js here */}
                     <div className="nav">
-                        <Link to='/Blog' className='link'>Blog</Link>
+                        <Link to='/Contact' className='link'>Blog</Link>
+                    </div>
+                    {/* Now Help in website is Blog.js here */}
+                    <div className="nav">
+                        <Link to='/Blog' className='link'>Help</Link>
                     </div>
                     {
                         userInfo ?

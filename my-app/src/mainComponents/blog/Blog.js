@@ -45,14 +45,15 @@ export default function Blog() {
         <form onSubmit={handlePost}>
             <div className="blog-first">
                 <div className="blogContainer">
-                    <label>Name:</label>
-                    <input className="input" type="text" name="AuthorName"
+                    <p className='heading'>How can we Help You?</p>
+                    <label className='common'>Describe the Problem you're having :</label>
+                    <input className="text" type="text" required="true" name="AuthorName"
                         onChange={(e) => { handleChange(e) }} value={post.AuthorName} />
-                    <label>Compose:</label>
-                    <textarea name="composeData" cols="10" rows="7"
+                    <label className='common'>Give us the details :</label>
+                    <textarea className='text' required='true' name="composeData" cols="30" rows="15"
                         onChange={(e) => { handleChange(e) }} value={post.composeData}
                     />
-                    <button>Post</button>
+                    <button className='post-button'>Email Us</button>
                 </div>
             </div>
         </form>

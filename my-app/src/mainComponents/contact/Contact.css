@@ -1,21 +1,64 @@
 @media screen and (max-width:600px) {
     div.contact-first {
-        background-image: url(../../../public/images/contact2.png);
-        background-size: contain;
+        /* background-image: url(../../../public/images/contact2.png); */
+        /* background-size: contain;
         background-repeat: no-repeat;
         width: 100%;
         height: 0;
-        padding-top: 141.7%;
+        padding-top: 141.7%; */
     }
 }
 
 @media screen and (min-width:601px) {
     div.contact-first {
-        background-image: url(../../../public/images/contact1.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 0;
-        padding-top: 56.3%;
+        display: flex;
+        background-color: white;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+    }
+
+    div.contact-first-content {
+        width: 30vw;
+        text-align: center;
+    }
+
+    .blog-heading {
+        font-size: 30px;
+        margin: 0 0 20px 0;
+        color: indigo;
+    }
+
+    .contact-second {
+        background-color: #bababa;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-second-heading {
+        font-size: 25px;
+    }
+
+    .second-content-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0;
+    }
+
+    .contact-second-content {
+        width: 25vw;
+        margin: 0 50px;
+        text-align: center;
+    }
+
+    .contact-second-content a {
+        color: black;
+        font-size: 17px;
     }
 }

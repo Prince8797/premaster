@@ -12,7 +12,7 @@
     div.card-title {
         font-size: 2em;
         font-weight: bolder;
-        background: -webkit-linear-gradient(150deg, red, yellow);
+        /* background: -webkit-linear-gradient(150deg, red, yellow); */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -27,7 +27,7 @@
     .card-btn {
         width: 120px;
         height: 40px;
-        background: -webkit-linear-gradient(30deg, brown, black);
+        /* background: -webkit-linear-gradient(30deg, brown, black); */
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -52,7 +52,7 @@
     div.card-title {
         font-size: 3em;
         font-weight: bolder;
-        background: -webkit-linear-gradient(150deg, red, yellow);
+        /* background: -webkit-linear-gradient(150deg, red, yellow); */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -67,7 +67,7 @@
     .card-btn {
         width: 150px;
         height: 50px;
-        background: -webkit-linear-gradient(30deg, brown, black);
+        /* background: -webkit-linear-gradient(30deg, brown, black); */
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -76,7 +76,7 @@
     }
 
     .card-btn:hover {
-        background: -webkit-linear-gradient(30deg, rgb(99, 169, 28), rgb(34, 33, 32));
+        /* background: -webkit-linear-gradient(30deg, rgb(99, 169, 28), rgb(34, 33, 32)); */
     }
 
 }
@@ -87,7 +87,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: -webkit-linear-gradient(60deg, rgb(255, 85, 0), rgb(255, 213, 0));
+    /* background: -webkit-linear-gradient(60deg, rgb(255, 85, 0), rgb(255, 213, 0)); */
     margin: 0 0 30px 0;
 }
 
@@ -97,7 +97,7 @@
     justify-content: center;
     align-items: center;
     width: 93vw;
-    background: linear-gradient(60deg, rgb(172, 231, 216), rgb(19, 80, 186), rgb(176, 11, 176));
+    /* background: linear-gradient(60deg, rgb(172, 231, 216), rgb(19, 80, 186), rgb(176, 11, 176)); */
     border-radius: 10px;
     line-height: 1.5;
     margin: 50px 0;
