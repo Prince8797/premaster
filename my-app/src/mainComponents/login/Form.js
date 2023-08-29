@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import './Form.css';
 import { DataContext } from "../../context/data-provider";
+import { API_URL } from "../../constants";
 
 
 export default function Form(props) {
@@ -71,7 +72,7 @@ export default function Form(props) {
         // {data} is the response json data containing all the user details coming from database.
 
         try {
-            const { data } = await axios.post('/api/users/login', {
+            const { data } = await axios.post(`${API_URL}/api/users/login`, {
                 username: user.username, // these data will be send to request.body of route.js in server.
                 password: user.password
             });
