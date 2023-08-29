@@ -9,7 +9,7 @@ export default function Contact() {
                 <div className="contact-first-content">
                     <p className="blog-heading">WELCOME TO THE MAS BLOGS</p>
                     <p>
-                        My Analytics School is an Ed-Tech start-up founded by IIT Ghostwriter Schweiz alumni, providing an end-to-end solution for analytics klausur schreiben lassen kosten, data science placements and related job preparation
+                        PreMaster is an Ed-Tech start-up and open source website founded by Prince Mathur an IIT ISM student, providing an end-to-end solution for full stack web Development, data analytics, data science placements and related job preparation
                     </p>
                 </div>
             </div>
