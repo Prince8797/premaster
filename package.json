@@ -2,7 +2,7 @@
     "name": "premaster",
     "version": "1.0.0",
     "description": "open-source-web",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
         "build": "cd server && npm install  && cd ../my-app && npm install && npm run build",
         "start": "node server.js",
