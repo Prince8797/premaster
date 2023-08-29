@@ -1,0 +1,21 @@
+{
+    "name": "premaster",
+    "version": "1.0.0",
+    "description": "open-source-web",
+    "main": "index.js",
+    "scripts": {
+        "build": "cd server && npm install  && cd ../my-app && npm install && npm run build",
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Prince8797/premaster"
+    },
+    "author": "Prince Mathur",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Prince8797/premaster/issues"
+    },
+    "homepage": "https://github.com/Prince8797/premaster/issues"
+}
