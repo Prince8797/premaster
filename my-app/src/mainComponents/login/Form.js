@@ -43,7 +43,7 @@ export default function Form(props) {
         // sending request to routes.js in server for signup user.
         // {data}  is the data which we will get from db ie., user's all details.
         try {
-            const { data } = await axios.post(`${API_URL}/api/users/signup`, {
+            const { data } = await axios.post(`/api/users/signup`, {
                 firstname: user.firstname,
                 lastname: user.lastname,
                 username: user.username,
@@ -72,7 +72,7 @@ export default function Form(props) {
         // {data} is the response json data containing all the user details coming from database.
 
         try {
-            const { data } = await axios.post(`${API_URL}/api/users/login`, {
+            const { data } = await axios.post(`/api/users/login`, {
                 username: user.username, // these data will be send to request.body of route.js in server.
                 password: user.password
             });
